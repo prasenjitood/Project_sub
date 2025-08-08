@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login UI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="login-box">
+      <h2>Login</h2>
+      <form>
+        <div class="input-box">
+          <input type="email" required />
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          <input type="password" required />
+          <label>Password</label>
+        </div>
+        <a href="#" class="forgot">Forgot your password?</a>
+        <button type="submit" class="login-btn">Login</button>
+        <a href="signup.html" class="signup">Signup</a>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const form = document.querySelector('form');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); 
+
+      const email = form.querySelector('input[type="email"]').value.trim();
+      const password = form.querySelector('input[type="password"]').value.trim();
+
+      if (email === '' || password === '') {
+        alert('Please enter both email and password.');
+        return;
+      }
+
+      window.location.href = 'dashboard.html';
+    });
+  </script>
+</body>
+</html>

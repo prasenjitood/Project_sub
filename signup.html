@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up UI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Removed the circle div for animation -->
+    <div class="login-box">
+      <h2>Sign Up</h2>
+      <form id="signupForm">
+        <div class="input-box">
+          <input type="text" required />
+          <label>Username</label>
+        </div>
+        <div class="input-box">
+          <input type="email" required />
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          <input type="password" required />
+          <label>Password</label>
+        </div>
+        <button type="submit" class="login-btn">Sign Up</button>
+        <a href="index.html" class="signup">Already have an account? Login</a>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('signupForm');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const username = form.querySelector('input[type="text"]').value.trim();
+      const email = form.querySelector('input[type="email"]').value.trim();
+      const password = form.querySelector('input[type="password"]').value.trim();
+
+      if (!username || !email || !password) {
+        alert('Please fill all fields.');
+        return;
+      }
+
+      alert('Your sign up is done!');
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>
